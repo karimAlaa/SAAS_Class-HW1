@@ -23,7 +23,6 @@ class Numeric
 end
 
 class String
-  # YOUR CODE HERE  
   def palindrome?
     str=self.downcase.gsub(/\W/,"")
     str==str.reverse
@@ -31,19 +30,15 @@ class String
 end
 
 module Enumerable
-  # YOUR CODE HERE
   def palindrome?
     if !self.respond_to?(:each)
       false
     end 
-    normal, reverse = [],[]
-    self.each do |elt|
-      normal << elt
-      reverse.insert(0, elt)
+    arr, arr_rev = [],[]
+    self.each do |elem|
+      arr << elem
+      arr_rev.insert(0, elem)
     end
-    normal == reverse
+    arr == arr_rev
   end
-
 end
-
-p (1..9).palindrome?

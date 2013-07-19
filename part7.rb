@@ -8,9 +8,7 @@ class CartesianProduct
 	def each
 		if !(@sq1.empty? || @sq2.empty?)
 			@sq1.each do |el|
-				@sq2.each do |el2|
-					yield [el,el2]
-				end
+				@sq2.each { |el2| yield [el,el2] }
 			end
 		end
 	end
